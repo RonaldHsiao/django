@@ -15,3 +15,11 @@ user ronald
 
 5. 建立超級使用者
 	- python manage.py createsuperuser
+
+6. 新增功能
+	- python manage.py startapp app
+		- settings.py
+			- install apps
+			- "user.apps.UserConfig",
+7. 新增獨立的templates
+	- user/templates/user
