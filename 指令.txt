@@ -1,3 +1,6 @@
+user ronald
+密碼123456789
+
 1. 安裝django
 	- pip install django
 
@@ -12,5 +15,3 @@
 
 5. 建立超級使用者
 	- python manage.py createsuperuser
-user ronald
-密碼123456789
