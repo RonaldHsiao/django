@@ -1,0 +1,16 @@
+1. 安裝django
+	- pip install django
+
+2. 建立專案
+	- django-admin start project todolist
+
+3. 啟動server
+	- python manage.py runserver
+
+4. 資料庫同步
+	- python manage.py migrate
+
+5. 建立超級使用者
+	- python manage.py createsuperuser
+user ronald
+密碼123456789
