@@ -1,30 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>個人資訊</title>
-</head>
-
-<body>
-    <h1>Profile</h1>
-    {% if user.is_authenticated %}
-    使用者名稱:{{user.username}} <a href="{% url 'logout' %}"><br>登出</a>
-    <ul>
-        <li>註冊日期:{{user.date_joined}}</li>
-        <li>信箱:{{user.email}}</li>
-        <li>管理員:{% if user.is_superuser %}
-            是
-            {% else %}
-            否
-            {% endif %}
-        </li>
-        <li>最後登入時間:{{user.last_login}}</li>
-    </ul>
-    {% else %}
-    <p><a href="{% url 'login' %}">請先登入</a></p>
-    {% endif %}
-</body>
-
-</html>
+{% extends 'base.html' %}
+{% block title %}個人資訊{% endblock %}
+{% block content %}
+<h1>Profile</h1>
+{% if user.is_authenticated %}
+<!-- 使用者名稱:{{user.username}} <a href="{% url 'logout' %}"><br>登出</a> -->
+<ul>
+    <li>註冊日期:{{user.date_joined}}</li>
+    <li>信箱:{{user.email}}</li>
+    <li>管理員:{% if user.is_superuser %}
+        是
+        {% else %}
+        否
+        {% endif %}
+    </li>
+    <li>最後登入時間:{{user.last_login}}</li>
+</ul>
+{% else %}
+<p><a href="{% url 'login' %}">請先登入</a></p>
+{% endif %}
+{% endblock %}
