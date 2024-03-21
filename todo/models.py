@@ -12,4 +12,4 @@ class Todo(models.Model):
     user = models.ForeignKey(User,on_delete = models.CASCADE)
 
     def __str__(self):
-        return f"{self.created}-{self.title}-{self.user}"
+        return f"{self.id}-{self.created}-{self.title}-{self.user}"
