@@ -1,10 +1,17 @@
 {% extends 'base.html' %}
 {% block title %}代辦事項{% endblock %}
-{%block style%}
-{%endblock%}
+{% block style %}
+{% endblock %}
 {% block content %}
 <h1>Todo</h1>
-
-{{todo}}
-
+建立時間:{{todo.created}}<br>
+{% if todo.date_completed %}
+完成時間:{{todo.date_completed}}
+{% endif %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="更新" name="update">
+    <input type="submit" value="刪除" name="delete">
+</form>
 {% endblock %}
