@@ -41,6 +41,7 @@
         使用者名稱:<a href="{% url 'profile' %}">{{user.username}}</a> <a href="{% url 'logout' %}">登出</a>
         <a href="{% url 'todolist' %}">TodoList</a>
         <a href="{% url 'create_todo' %}">建立事項</a>
+        <a href="{% url 'completed_todo' %}">已完成事項</a>
         {% else %}
         <a href="{% url 'login' %}">登入</a>
         <a href="{% url 'register' %}">註冊</a>
@@ -53,5 +54,12 @@
     </div>
     <p id="message">{{message}}</p>
 </body>
+{% block javascript %}
+<script>
+    function confirmDelete() {
+        return confirm("確認刪除");
+    }
+</script>
+{% endblock %}
 
 </html>
