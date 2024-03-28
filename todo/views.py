@@ -5,6 +5,19 @@ from datetime import datetime
 from django.contrib.auth.decorators import login_required
 
 @login_required
+def uncompleted_todo_byId(reqiest,id):
+    try:
+        todo = Todo.objects.get(id=id)
+        todo.completed = False
+        todo.date_completed = datetime.now()
+        todo.save()
+    except Exception as e:
+        print(e)
+
+    return redirect("todolist")
+
+
+@login_required
 def completed_todo_byId(reqiest,id):
     try:
         todo = Todo.objects.get(id=id)
