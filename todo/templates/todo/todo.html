@@ -60,6 +60,7 @@
     <p class="text">{{todo.text}}</p>
 
     <a href="{% url 'delete_todo' todo.id %}" onclick="return confirmDelete()">刪除</a>
+    <a href="{% url 'completed_todo' todo.id %}" onclick="return confirmCompleted()">完成</a>
 
 </div>
 {% endfor %}
